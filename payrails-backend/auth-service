@@ -1,0 +1,63 @@
+const axios = require('axios');
+
+async function requestAccessToken() {
+    let config = {
+        method: 'post',
+        maxBodyLength: Infinity,
+        url: 'http://localhost:3001/auth/token/:clientId',
+        headers: {
+            'Accept': 'application/json',
+            'x-api-key': 'lbnM6cmVhZCIsInRyYW5zZmVyczpjcmVhdGUiLCJ0cmFuc2ZlcnM6bGlzdCIsInRyYW5zZmVyczpyZWFkIiwidXNl'
+        }
+    };
+
+    try {
+        const response = await axios.request(config);
+        return response.data.access_token;
+    } catch (error) {
+        throw error;
+    }
+}
+
+async function getClientCredentials(token) {
+    let data = JSON.stringify({
+        "type": "tokenization",
+        "holderReference": "Mock Merchant",
+    });
+    let config = {
+        method: 'post',
+        maxBodyLength: Infinity,
+        url: 'http://localhost:3001/merchant/client/init',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        data: data
+    };
+    try {
+        const response = await axios.request(config);
+        const base64String = response.data.data; 
+        const decodedString = JSON.parse(Buffer.from(base64String, 'base64').toString('utf-8'));
+        return decodedString;
+    }
+    catch (error) {
+        throw error;
+    }
+}
+
+async function initializeClient() {
+    try {
+        const accessToken = await requestAccessToken();
+        const clientCredentials = await getClientCredentials(accessToken);
+        return clientCredentials;
+    } catch (error) {
+        throw error;
+    }
+}
+
+module.exports = {
+    requestAccessToken,
+    getClientCredentials,
+    initializeClient
+};

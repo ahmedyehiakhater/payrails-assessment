@@ -1,0 +1,14 @@
+.card-container{
+    background-color: black;
+    color: white;
+    display: flex;
+    height: 250px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    input{
+        width: 80%;
+        padding: 10px;
+    }
+}

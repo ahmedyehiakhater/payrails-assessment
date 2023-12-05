@@ -9,6 +9,10 @@
   "author": "thnico",
   "license": "ISC",
   "dependencies": {
-    "@mockoon/cli": "^5.0.0"
+    "@mockoon/cli": "^5.0.0",
+    "api": "^6.1.1",
+    "axios": "^1.6.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
   }
 }
