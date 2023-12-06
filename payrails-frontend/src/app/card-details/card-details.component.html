@@ -1,3 +1,53 @@
-<div class="card-container">
-    <input type="text">
-</div>
+<div class="credit-card-form">
+    <form (ngSubmit)="onSubmit()" #creditCardForm="ngForm">
+      <label for="holderName">Name</label>
+      <input
+        id="holderName"
+        type="text"
+        name="holderName"
+        [(ngModel)]="creditCardModel.holderName"
+        creditCardName
+        required
+      />
+      <label for="cardNumber">Card Number</label>
+      <input
+        id="cardNumber"
+        type="text"
+        name="cardNumber"
+        [(ngModel)]="creditCardModel.cardNumber"
+        creditCardNumber
+        required
+      />
+      <label for="expiryMonth">Expiry Month</label>
+      <input
+        id="expiryMonth"
+        type="text"
+        name="expiryMonth"
+        [(ngModel)]="creditCardModel.expiryMonth"
+        creditCardExpiryMonth
+        required
+      />
+      <label for="expiryYear">Expiry Year</label>
+      <input
+        id="expiryYear"
+        type="text"
+        name="expiryYear"
+        [(ngModel)]="creditCardModel.expiryYear"
+        creditCardExpiryYear
+        required
+      />
+  
+      <label for="securityCode">CVV</label>
+      <input
+        id="securityCode"
+        type="text"
+        name="securityCode"
+        [(ngModel)]="creditCardModel.securityCode"
+        creditCardCvc
+        required
+      />
+  
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  

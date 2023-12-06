@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
 import { PayrailsService } from './services/payrails.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { NgCreditCardModule } from 'angular-credit-card';
+import { EncryptionService } from './services/encryption.service';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,10 @@ import { NgCreditCardModule } from 'angular-credit-card';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     NgCreditCardModule
   ],
-  providers: [PayrailsService],
+  providers: [PayrailsService, EncryptionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

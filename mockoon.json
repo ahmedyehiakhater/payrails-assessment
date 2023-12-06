@@ -216,6 +216,10 @@
             {
               "key": "Content-Type",
               "value": "application/json"
+            },
+            {
+              "key":"Access-Control-Allow-Origin",
+              "value": "*"
             }
           ],
           "bodyType": "INLINE",
@@ -239,6 +243,10 @@
             {
               "key": "Content-Type",
               "value": "application/json"
+            },
+            {
+              "key":"Access-Control-Allow-Origin",
+              "value": "*"
             }
           ],
           "bodyType": "INLINE",
@@ -262,6 +270,10 @@
             {
               "key": "Content-Type",
               "value": "application/json"
+            },
+            {
+              "key":"Access-Control-Allow-Origin",
+              "value": "*"
             }
           ],
           "bodyType": "INLINE",
@@ -285,6 +297,10 @@
             {
               "key": "Content-Type",
               "value": "application/json"
+            },
+            {
+              "key":"Access-Control-Allow-Origin",
+              "value": "*"
             }
           ],
           "bodyType": "INLINE",
@@ -308,6 +324,10 @@
             {
               "key": "Content-Type",
               "value": "application/json"
+            },
+            {
+              "key":"Access-Control-Allow-Origin",
+              "value": "*"
             }
           ],
           "bodyType": "INLINE",
