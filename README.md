@@ -164,3 +164,48 @@ To ensure successful tokenization, please verify that the holder reference provi
 ## Support
 
 If your have questions or if you are facing issues with the tooling, please reach out to Payrails Hiring Manager in charge of your application via email.
+
+## Testing Instructions
+
+To test the Payrails Product assessment app, follow these steps:
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/ahmedyehiakhater/payrails-assessment.git
+   cd payrails-assessment
+   ```
+2. **Install Dependencies:**
+- Install dependencies in the main directory
+```bash
+npm install
+```
+- Install dependencies in the frontend sub-directory
+```bash
+cd payrails-frontend
+npm install
+```
+3. **Start Mock Server:**
+- Run the mockoon server with Payrails mock API on port 3001
+```bash
+mockoon-cli start --data ./mockoon.json
+```
+4. **Start Backend server:**
+- In a new terminal, navigate to payrails-backend sub-directory and start the backend server
+```bash
+cd payrails-backend
+node app.js
+```
+5. **Build and deploy Angular project:**
+- In a new terminal, navigate to payrails-frontend sub-directory and run the below command
+```bash
+cd payrails-frontend
+ng serve
+```
+6. **Access the application:**
+Open your web browser and go to http://localhost:4200 to access the Payrails Product assessment app.
+
+7. **Follow the sequence of steps:**
+Follow the sequence of steps outlined in the README to initialize the client, tokenize the card, and create a payment instrument.
+
+8. **Verify results:**
+Ensure that the tokenization process completes successfully and verify the results as per the README
